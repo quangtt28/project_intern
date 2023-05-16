@@ -1,0 +1,28 @@
+
+.row{
+  margin: 0px 0px;
+}
+h2{
+  text-align: center;
+  color: rgb(13, 129, 71);
+  letter-spacing: 3px;
+  font-style: italic;
+  font-weight: 700;
+}
+.contain{
+  background-color: rgb(245, 245, 252);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.button-css{
+  margin-top: 20px;
+
+}
+.input{
+  display: flex;  margin-bottom: 20px;
+}
+/* .label{
+    display: flex;
+    top: 50px;
+    margin-top: 50px;
+} */

@@ -1,0 +1,83 @@
+<div class="row contain">
+  <div class="col-xs-12">
+    <form >
+      <h2>Edit Employee</h2>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">First Name:</label>
+            <input type="text"
+                   id="name"
+                   class="form-control"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   value={{data.firstname}}
+                   #FirstName
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Last Name:</label>
+            <input type="text"
+                   id="name"
+                   class="form-control"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   value={{data.lastname}}
+                   #LastName
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">Email:</label>
+            <input type="text"
+                   id="name"
+                   class="form-control"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   value={{data.email}}
+                   #Email
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row button-css">
+        <div class="col-xs-12" >
+          <button
+            type="submit"
+            class="btn btn-success"
+            [disabled]=""
+            style=" width: 100px; margin-right: 15px;"
+            (click)="edit()"
+            mat-button mat-dialog-close
+          >Edit
+          </button>
+
+          <button type="button"
+                  class="btn btn-danger"
+
+                  mat-button mat-dialog-close
+          >
+            Cancel
+          </button>
+
+          <button type="button"
+                  class="btn btn-dark"
+                  style="float: right;"
+                  (click)="delete()"
+                  mat-button mat-dialog-close
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="row contain">
+  <div class="col-xs-12">
+    <form  >
+
+      <h2>Add Employee</h2>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text"
+                   id="firstname"
+                   class="form-control"
+                   name="Name"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   [(ngModel)] = "employee.firstname"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input type="text"
+                   id="lastname"
+                   class="form-control"
+                   name="Name"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   [(ngModel)] = "employee.lastname"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text"
+                   id="email"
+                   class="form-control"
+                   name="Name"
+                   style=" display: flex;  margin-bottom: 10px;"
+                   [(ngModel)] = "employee.email"
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row button-css">
+        <div class="col-xs-12">
+          <form class="d-flex">
+            <button
+
+              type="submit"
+              class="btn btn-success text-center"
+              [disabled]=""
+              style=" display: flex; width: 100px; margin-right: 5px; margin-left: auto;  justify-content: center;"
+              (click)="insert()"
+              mat-button mat-dialog-close
+            >Save
+            </button>
+            <button type="button"
+                    class="btn btn-danger"
+                    style="display: flex; margin-left: 5px; margin-right: auto;"
+                    mat-button mat-dialog-close
+            >
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
