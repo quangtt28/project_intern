@@ -14,7 +14,7 @@ import { EmployeeListComponent } from './employee/employee-list/employee-list.co
 import { HeaderFooterComponent } from './header-footer/header-footer.component';
 import { LoginComponent } from './login/login.component';
 import {HttpClientModule} from "@angular/common/http";
-// import {authInterceptorProviders} from "./auth.interceptor";
+import {authInterceptorProviders} from "./auth.interceptor";
 
 
 @NgModule({
@@ -37,7 +37,7 @@ import {HttpClientModule} from "@angular/common/http";
     MatSortModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

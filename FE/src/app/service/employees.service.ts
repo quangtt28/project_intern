@@ -12,57 +12,61 @@ const AUTH_API = 'http://localhost:8080/api/employees/';
   providedIn: 'root'
 })
 export class EmployeesService{
-  httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json'
-    })
-  }
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'application/json'
+  //   })
+  // }
   constructor(
     private http: HttpClient,
-    private authService: AuthService
+    // private authService: AuthService
   ) {}
 
-  public setHeaders():any{
-    let token = `Bearer ${this.authService.getAuthorizationToken()}`
-    console.log('token:  ',token);
-    const headers = new HttpHeaders().set('Authorization',token)
-    console.log('headers:  ' ,headers);
-    return headers
-  }
+  // public setHeaders():any{
+  //   let token = `Bearer ${this.authService.getAuthorizationToken()}`
+  //   console.log('token:  ',token);
+  //   const headers = new HttpHeaders().set('Authorization',token)
+  //   console.log('headers:  ' ,headers);
+  //   return headers
+  // }
 
   public insertEmployee(employee: Employees): Observable<any>{
-    const headers = this.setHeaders()
-    return this.http.post<any>(AUTH_API + 'insert',employee,{headers, responseType: 'json'});
+    // const headers = this.setHeaders()
+    // return this.http.post<any>(AUTH_API + 'insert',employee,{headers, responseType: 'json'});
+    return this.http.post<any>(AUTH_API + 'insert',employee,{responseType: 'json'});
   }
 
   public getAllEmployee(): Observable<any>{
-    const headers = this.setHeaders()
-    return this.http.get<any>(AUTH_API + 'all',{headers, responseType: 'json'});
+    // const headers = this.setHeaders()
+    // return this.http.get<any>(AUTH_API + 'all',{headers, responseType: 'json'});
+    return this.http.get<any>(AUTH_API + 'all',{responseType: 'json'});
   }
 
   public getEmployeeById(id: any): Observable<any>{
-    const headers = this.setHeaders()
-    return this.http.get<any>(AUTH_API + id,{headers, responseType: 'json'});
+    // const headers = this.setHeaders()
+    // return this.http.get<any>(AUTH_API + id,{headers, responseType: 'json'});
+    return this.http.get<any>(AUTH_API + id,{responseType: 'json'});
   }
 
   public updateEmployee(id: any, employee: Employees): Observable<any> {
-    const headers = this.setHeaders()
+    // const headers = this.setHeaders()
     console.log(employee);
     console.log(AUTH_API + id);
     return this.http.put<any>(AUTH_API + id, employee,{
-      headers,
+      // headers,
       responseType:'json'
     });
   }
 
 
   public deleteEmployee(id: any): Observable<any>{
-    const headers = this.setHeaders()
-    return this.http.delete<any>(AUTH_API + id,{headers, responseType: 'json'});
+    // const headers = this.setHeaders()
+    // return this.http.delete<any>(AUTH_API + id,{headers, responseType: 'json'});
+    return this.http.delete<any>(AUTH_API + id,{responseType: 'json'});
   }
 
   public report(){
-    const headers = this.setHeaders()
+    // const headers = this.setHeaders()
     console.log(AUTH_API + 'report/05/2023');
     const fileUrl =  AUTH_API + 'report/05/2023';
 
@@ -81,7 +85,8 @@ export class EmployeesService{
       .catch(error => {
         console.error('Error downloading file:', error);
       });
-    return this.http.get<any>(AUTH_API + 'report/05/2023',{headers, responseType: 'text' as 'json'});
+    // return this.http.get<any>(AUTH_API + 'report/05/2023',{headers, responseType: 'text' as 'json'});
+    return this.http.get<any>(AUTH_API + 'report/05/2023',{responseType: 'text' as 'json'});
   }
 }
 
