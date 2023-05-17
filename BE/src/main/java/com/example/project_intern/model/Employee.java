@@ -1,6 +1,7 @@
 package com.example.project_intern.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Table(name = "employee")
@@ -11,6 +12,7 @@ public class Employee {
 //    private String code;
     private String firstname;
     private String lastname;
+    @Email
     private String email;
 
     public Employee(){}
