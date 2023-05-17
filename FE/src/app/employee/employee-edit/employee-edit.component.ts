@@ -38,12 +38,14 @@ export class EmployeeEditComponent {
     this.employeesService.updateEmployee(this.data.id, this.employees).subscribe(data =>{
       console.log(data);
       alert("Update thành công!")
+      location.reload();
     }, error => alert("Lỗi update!"));
   }
 
   public delete(){
     this.employeesService.deleteEmployee(this.data.id).subscribe(data =>{
       alert("Xóa thành công!")
+      location.reload();
     }, error => alert("Lỗi delete!"));
   }
 }

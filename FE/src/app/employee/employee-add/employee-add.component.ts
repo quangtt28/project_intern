@@ -17,6 +17,7 @@ export class EmployeeAddComponent {
     this.employeesService.insertEmployee(this.employee).subscribe(data =>{
       console.log(data);
       alert("Thêm employee thành công!")
+      location.reload();
     }, error => alert("Lỗi không thêm được!"));
   }
 }
