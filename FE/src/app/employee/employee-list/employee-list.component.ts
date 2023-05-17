@@ -62,8 +62,8 @@ export class EmployeeListComponent implements OnInit{
 
   public exportReport(){
     this.employeesService.report().subscribe(data => {
-      alert("Đã xuất báo cáo!")
-    }, error => alert("Đã xuất báo cáo!"));
+      alert("Đã tải về báo cáo!")
+    }, error => alert("Đã tải về báo cáo!"));
   }
 
   openDialogAdd(){
